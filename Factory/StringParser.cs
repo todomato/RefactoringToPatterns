@@ -12,7 +12,7 @@ namespace Factory
             int textEnd = 0;
             Parser parser = new Parser();
 
-            return parser.getStringNodeParsingOption().createStringNode(
+            return parser.getNodeFactory().createStringNode(
                 textBuffer, textBegin, textEnd);
         }
     }
@@ -20,7 +20,7 @@ namespace Factory
     {
         private NodeFactory _nodeFactory = new NodeFactory();
 
-        public NodeFactory getStringNodeParsingOption()
+        public NodeFactory getNodeFactory()
         {
             return _nodeFactory;
         }
