@@ -60,8 +60,21 @@ namespace Factory
         {
             _shouldDecodeNodes = shouldDecodeNodes;
         }
-    }
+    } 
+    public class StringNodeParingOption
+    {
+        private bool decodeStringNodes;
 
+        public bool shouldDecodeStringNodes()
+        {
+            return decodeStringNodes;
+        }
+
+        public void setNodeDecoding(Boolean shouldDecodeNodes)
+        {
+            decodeStringNodes = shouldDecodeNodes;
+        }
+    } 
     public class StringBuffer
     {
     }
