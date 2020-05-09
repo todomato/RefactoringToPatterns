@@ -12,7 +12,7 @@ namespace Factory
             int textEnd = 0;
             Parser parser = new Parser();
 
-            parser.getStringNodeParsingOption().createStringNode(
+            return parser.getStringNodeParsingOption().createStringNode(
                 textBuffer, textBegin, textEnd);
         }
     }
