@@ -15,7 +15,7 @@ namespace Factory
             var nodeFactory = new NodeFactory();
             return nodeFactory.createStringNode(
                 textBuffer, textBegin, textEnd,
-                parser.shouldDecodeNodes());
+                parser.getStringNodeParsingOption().shouldDecodeStringNodes());
         }
     }
 
