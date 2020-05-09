@@ -17,19 +17,6 @@ namespace Factory
         }
     }
 
-    public class NodeFactory
-    {
-        public Node createStringNode(StringBuffer textBuffer, int textBegin, int textEnd, bool shouldDecodeNodes)
-        {
-            if (shouldDecodeNodes)
-            {
-                return new DecondingStringNode(new StringNode(textBuffer, textBegin, textEnd));
-            }
-
-            return new StringNode(textBuffer, textBegin, textEnd);
-        }
-    }
-
     public class StringNode : Node
     {
         public StringNode(StringBuffer textBuffer, int textBegin, int textEnd)
@@ -48,20 +35,20 @@ namespace Factory
 
     public class Parser
     {
-        private StringNodeParingOption stringNodeParingOption = new StringNodeParingOption();
+        private NodeFactory _nodeFactory = new NodeFactory();
 
-        public StringNodeParingOption getStringNodeParsingOption()
+        public NodeFactory getStringNodeParsingOption()
         {
-            return stringNodeParingOption;
+            return _nodeFactory;
         }
 
-        public void setStringNodeParsingOption(StringNodeParingOption option)
+        public void setStringNodeParsingOption(NodeFactory factory)
         {
-            stringNodeParingOption = option;
+            _nodeFactory = factory;
         }
     }
 
-    public class StringNodeParingOption
+    public class NodeFactory
     {
         private bool decodeStringNodes;
 
