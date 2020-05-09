@@ -25,7 +25,7 @@ namespace Factory
             return _nodeFactory;
         }
 
-        public void setStringNodeParsingOption(NodeFactory factory)
+        public void setNodeFactory(NodeFactory factory)
         {
             _nodeFactory = factory;
         }
