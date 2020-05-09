@@ -70,9 +70,9 @@ namespace Factory
             return decodeStringNodes;
         }
 
-        public void setNodeDecoding(Boolean shouldDecodeNodes)
+        public void setNodeDecoding(Boolean decodeStringNodes)
         {
-            decodeStringNodes = shouldDecodeNodes;
+            this.decodeStringNodes = decodeStringNodes;
         }
     } 
     public class StringBuffer
