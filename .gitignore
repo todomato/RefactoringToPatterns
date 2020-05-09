@@ -3,3 +3,5 @@
 ################################################################################
 
 /Factory/obj/Debug
+/Factory/bin/Debug
+/.vs/RefactoringToPatterns/v16
