@@ -16,23 +16,6 @@ namespace Factory
                 textBuffer, textBegin, textEnd);
         }
     }
-
-    public class StringNode : Node
-    {
-        public StringNode(StringBuffer textBuffer, int textBegin, int textEnd)
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-
-    public class DecondingStringNode : Node
-    {
-        public DecondingStringNode(StringNode stringNode)
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-
     public class Parser
     {
         private NodeFactory _nodeFactory = new NodeFactory();
@@ -73,6 +56,24 @@ namespace Factory
         }
     }
 
+
+    public class StringNode : Node
+    {
+        public StringNode(StringBuffer textBuffer, int textBegin, int textEnd)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
+    public class DecondingStringNode : Node
+    {
+        public DecondingStringNode(StringNode stringNode)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
+  
     public class StringBuffer
     {
     }
