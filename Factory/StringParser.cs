@@ -49,16 +49,16 @@ namespace Factory
 
     public class Parser
     {
-        private bool _shouldDecodeNodes = false;
+        private StringNodeParingOption stringNodeParingOption =new StringNodeParingOption();
 
-        public bool shouldDecodeNodes()
+        public StringNodeParingOption getStringNodeParsingOption()
         {
-            return _shouldDecodeNodes;
+            return stringNodeParingOption;
         }
 
-        public void setNodeDecoding(Boolean shouldDecodeNodes)
+        public void setStringNodeParsingOption(StringNodeParingOption option)
         {
-            _shouldDecodeNodes = shouldDecodeNodes;
+            stringNodeParingOption = option;
         }
     } 
     public class StringNodeParingOption
