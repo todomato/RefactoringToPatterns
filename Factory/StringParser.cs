@@ -19,7 +19,7 @@ namespace Factory
 
     public class NodeFactory
     {
-        public static Node createStringNode(StringBuffer textBuffer, int textBegin, int textEnd, bool shouldDecodeNodes)
+        public Node createStringNode(StringBuffer textBuffer, int textBegin, int textEnd, bool shouldDecodeNodes)
         {
             if (shouldDecodeNodes)
             {
