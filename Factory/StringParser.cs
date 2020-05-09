@@ -11,7 +11,8 @@ namespace Factory
             int textEnd = 0;
             Parser parser = new Parser();
 
-            return NodeFactory.createStringNode(
+            var nodeFactory = new NodeFactory();
+            return nodeFactory.createStringNode(
                 textBuffer, textBegin, textEnd,
                 parser.shouldDecodeNodes());
         }
