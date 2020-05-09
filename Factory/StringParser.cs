@@ -12,10 +12,8 @@ namespace Factory
             int textEnd = 0;
             Parser parser = new Parser();
 
-            var nodeFactory = new NodeFactory();
-            return nodeFactory.createStringNode(
-                textBuffer, textBegin, textEnd,
-                parser.getStringNodeParsingOption().shouldDecodeStringNodes());
+            parser.getStringNodeParsingOption().createStringNode(
+                textBuffer, textBegin, textEnd);
         }
     }
 
@@ -27,6 +25,7 @@ namespace Factory
             {
                 return new DecondingStringNode(new StringNode(textBuffer, textBegin, textEnd));
             }
+
             return new StringNode(textBuffer, textBegin, textEnd);
         }
     }
@@ -49,7 +48,7 @@ namespace Factory
 
     public class Parser
     {
-        private StringNodeParingOption stringNodeParingOption =new StringNodeParingOption();
+        private StringNodeParingOption stringNodeParingOption = new StringNodeParingOption();
 
         public StringNodeParingOption getStringNodeParsingOption()
         {
@@ -60,10 +59,21 @@ namespace Factory
         {
             stringNodeParingOption = option;
         }
-    } 
+    }
+
     public class StringNodeParingOption
     {
         private bool decodeStringNodes;
+
+        public Node createStringNode(StringBuffer textBuffer, int textBegin, int textEnd)
+        {
+            if (decodeStringNodes)
+            {
+                return new DecondingStringNode(new StringNode(textBuffer, textBegin, textEnd));
+            }
+
+            return new StringNode(textBuffer, textBegin, textEnd);
+        }
 
         public bool shouldDecodeStringNodes()
         {
@@ -74,7 +84,8 @@ namespace Factory
         {
             this.decodeStringNodes = decodeStringNodes;
         }
-    } 
+    }
+
     public class StringBuffer
     {
     }
