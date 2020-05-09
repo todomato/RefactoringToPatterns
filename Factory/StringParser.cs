@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System;
+using System.Xml;
 
 namespace Factory
 {
@@ -48,9 +49,16 @@ namespace Factory
 
     public class Parser
     {
+        private bool _shouldDecodeNodes = false;
+
         public bool shouldDecodeNodes()
         {
-            throw new System.NotImplementedException();
+            return _shouldDecodeNodes;
+        }
+
+        public void setNodeDecoding(Boolean shouldDecodeNodes)
+        {
+            _shouldDecodeNodes = shouldDecodeNodes;
         }
     }
 
